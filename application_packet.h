@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <cstdint>
+#include <cstring>
+
 
 using namespace std;
 
@@ -23,7 +25,7 @@ class ApplicationPacket{
     ApplicationPacket();
     //ApplicationPacket(char service, string payload);
     ApplicationPacket(int term, float dataSize); // Create data packet
-    APplicationPacket(int term); // Create reply packet
+    ApplicationPacket(int term); // Create reply packet
     ApplicationPacket(const ApplicationPacket &p);
     ApplicationPacket(string &serie);
     ~ApplicationPacket();

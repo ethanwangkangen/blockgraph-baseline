@@ -1,33 +1,54 @@
 #include "Central.h"
 #include <iomanip>
+#include <vector>
+#include "ns3/log.h"
+
 NS_LOG_COMPONENT_DEFINE("Central");
 NS_OBJECT_ENSURE_REGISTERED(Central);
+
+TypeId Central::GetTypeId(){
+  static TypeId tid = TypeId("Central")
+    .SetParent<Application>()
+    .SetGroupName("Application")
+    .AddConstructor<Central>()
+    ;
+  return tid;
+}
 
 // Constructor
 Central::Central() {
   isLeader = false;
   current_term = 0;
-  //allNodes = ;
-  
-  recv_sock = 0; // Setup later
+  sizeOfData = 500; // Todo: change this
+  // Set up in SetUp()
+  allNodes = vector<pair<bool,int>>();
+  recv_sock = 0; 
   node = Ptr<Node>();
   peers = vector<Ipv4Address>();
-
+  running = false;
 }
 
 Central::~Central(){
 }
 
+/**
+ * Initialise node, peers, recv_sock, allNodes array.
+ */
 void Central::SetUp(Ptr<Node> node, vector<Ipv4Address> peers){
   this->peers = peers;
   this->node = node;
+  allNodes.assign(peers.size(), make_pair(false,0));
+
+  if (node->GetId() == 1) { // Does this work?
+    isLeader = true;
+  } 
 
   if (!recv_sock){
-    TypeId tid = TypeId:LookupByName("ns3::UdpSocketFactory");
+    TypeId tid = TypeId::LookupByName("ns3::UdpSocketFactory");
     recv_sock = Socket::CreateSocket(node, tid);
   }
 
-  InetSocketAddress local = InetSocketAddress(Ipv4Address:GetAny(), 81);
+  InetSocketAddress local = InetSocketAddress(Ipv4Address::GetAny(), 81);
 
   recv_sock->Bind(local);
   recv_sock->SetRecvCallback(MakeCallback(&Central::ReceivePacket, this));
@@ -37,6 +58,10 @@ void Central::SetUp(Ptr<Node> node, vector<Ipv4Address> peers){
 void Central::StartApplication(){
   running = true;
   Simulator::ScheduleNow(&Central::DisseminateData, this);
+}
+
+void Central::StopApplication(){
+  running = false;
 }
 
 // Either follower receiving entire data from leader, or leader receiving a response.
@@ -101,17 +126,21 @@ void Central::SendPacket(ApplicationPacket& packet, Ipv4Address ip, bool schedul
 
 // Need to modify this to only send to nodes in the group.
 void Central::BroadcastPacket(ApplicationPacket& packet){
+  if (!running) {
+    return;
+  }
   for (auto& ip : peers){
-    SendPacket(packet, ip, false);
+    if (allNodes[GetIdFromIp(ip)].first == true){ // if node is in group
+      SendPacket(packet, ip, false);
+    }
   } 
 }
 
 /**
- * Broadcast the entire dataset at regular intervals.
+ * Leader only. Broadcast the entire dataset at regular intervals.
  * Increment size of dataset, sizeOfData
  * Call on the function that starts to check which followers have replied, and
  * send message to those who haven't.
- *
  *
  */
 void Central::DisseminateData(){
@@ -121,11 +150,14 @@ void Central::DisseminateData(){
 
   sizeOfData += 100; // Todo: change this
 
+  current_term++;
+
   // Create data packet
   ApplicationPacket p(current_term, sizeOfData);
 
-  // Broadcast the packet
-  BroadcastPacket(&p);
+  // Broadcast the packet. BroadcastPacket() takes care of handling which nodes
+  // to send to (only those in current partition)
+  BroadcastPacket(p);
 
   // Start retransmissions for this cycle.
   RetransmitData(current_term, 1);
@@ -140,6 +172,9 @@ void Central::DisseminateData(){
  *
  */
 void Central::RetransmitData(int term, int increment_count){
+  if (!running || !isLeader){
+    return;
+  }
   if (increment_count >= 20) { // Todo: implement this as a max increment
     return;
   }
@@ -172,7 +207,7 @@ Ipv4Address Central::GetIpAddressFromId(int id){
 }
 
 int Central::GetIdFromIp(Ipv4Address ip) {
-  for (unsigned int i=0; i<= peers.size(); i++){
+  for (unsigned int i=0; i< peers.size(); i++){
     if (peers[i]==ip) {
       return i;
     }
@@ -181,37 +216,57 @@ int Central::GetIdFromIp(Ipv4Address ip) {
 }
 
 /**
- * Send data packet of size sizeOfData to a specific follower node.
+ * Leader only. Send DATA packet of size sizeOfData to a specific follower node.
  */
 void Central::SendData(float sizeOfData, Ipv4Address destAddr){
+  if (!running || !isLeader) {
+    return;
+  }
   // Create data packet p of size sizeOfData, send to destAddr
   ApplicationPacket p(current_term, sizeOfData);
   SendPacket(p, destAddr, false);
 }
 
 
-void Central::ProcessFollowerResponse(ApplicationPacket& p, Ipv4Address ip){
+void Central::ProcessFollowerResponse(ApplicationPacket& p, Ipv4Address senderAddr){
+  if (!running || !isLeader) {
+    return;
+  }
   int term = p.GetTerm();
-  int followerId = GetIdFromIp(ip);
+  int followerId = GetIdFromIp(senderAddr);
   
   // Record that this follower replied for this term.
-  allNodes[i].second = term;
+  allNodes[followerId].second = term;
 }
 
 // Todo: some callback function for mobility/group discovery model to update nodes in group
 // Group is { [node id, ip address]... }
 void Central::ReceiveNewTopology(vector<pair<int, Ipv4Address>> new_group) {
+
+  if (!running) {
+    return;
+  }
   // Reset the status of allNodes
-  for (size_t i = 0; i < allNodes.size(); ++i) {
+  for (unsigned int i = 0; i < allNodes.size(); ++i) {
     allNodes[i].first = false; // Set all to not be in current group
   }
 
   // Then add those in the new group
-  for (&pair : new_group) {
-    int id = pair.first;
-    allNodes[i].first = true;
+  // for (&pair :: new_group) {
+  //   int id = pair.first;
+  //   allNodes[i].first = true;
+  // }
+
+  for (auto& [id, ip] : new_group) {
+    if (id >= 0 && id < (int)allNodes.size()) {
+      allNodes[id].first = true;
+    }
   }
 
 }	
 
-
+Ptr<Central> Central::GetCentral(int nodeId){
+  Ptr<Application> app = ns3::NodeList::GetNode(nodeId)->GetApplication(0);
+  Ptr<Central> centralApp = app->GetObject<Central>();
+  return centralApp;
+}

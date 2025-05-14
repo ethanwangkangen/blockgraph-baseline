@@ -1,4 +1,5 @@
 #include "b4mesh-mobility.h"
+#include "Central.h"
 
 NS_LOG_COMPONENT_DEFINE("B4MeshMobility");
 NS_OBJECT_ENSURE_REGISTERED(B4MeshMobility);
@@ -91,24 +92,16 @@ void B4MeshMobility::SetUp(Ptr<Node> node, vector<Ipv4Address> peers, int sTime,
 
   Config::Connect ("/NodeList/*/$ns3::MobilityModel/CourseChange",
                     MakeCallback (&B4MeshMobility::CourseChange, this));
-  }
+}
 
 
-Ptr<B4MeshOracle> B4MeshMobility::GetB4MeshOracle(int nodeId){
-
+Ptr<Central> B4MeshMobility::GetCentral(int nodeId){
   Ptr<Application> app = ns3::NodeList::GetNode(nodeId)->GetApplication(0);
-  Ptr<B4MeshOracle> oracle = app->GetObject<B4MeshOracle>();
-  return oracle;
-
+  Ptr<Central> centralApp = app->GetObject<Central>();
+  return centralApp;
 }
 
-Ptr<B4Mesh> B4MeshMobility::GetB4MeshOf(int nodeId){
 
-  Ptr<Application> app = ns3::NodeList::GetNode(nodeId)->GetApplication(1);
-  Ptr<B4Mesh> b4mesh = app->GetObject<B4Mesh>();
-  return b4mesh;
-
-}
 
 /**
  * Starts the application.
@@ -812,10 +805,10 @@ void B4MeshMobility::ChangeGroup(vector<pair<int, Ipv4Address>> groupCandidate){
   group = groupCandidate;
   // Notify consensus of the new groupId and new group
   // GetB4MeshOracle(node->GetId())->ChangeGroup(make_pair(groupId, group), natchange);
-  GetB4MeshOracle(node->GetId())->ChangeGroup(make_pair(groupId, group)); // Changed because of new ChangeGroup() inside Oracle 
-  debug(" Notifying the consensus module");
+  //GetB4MeshOracle(node->GetId())->ChangeGroup(make_pair(groupId, group)); // Changed because of new ChangeGroup() inside Oracle 
+  //debug(" Notifying the consensus module");
   // Notify the blockchain protocol of the new groupId, new group and nature of change
-  GetB4MeshOf(node->GetId())->ReceiveNewTopologyInfo(make_pair(groupId, group), natchange); 
+  GetCentral(node->GetId())->ReceiveNewTopology(group); 
   debug(" Notifying the blockgraph module");
   time_change = (int)Simulator::Now().GetSeconds();
 

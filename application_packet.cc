@@ -1,10 +1,11 @@
 #include "application_packet.h"
+#include <cstring>
 
 /**
  * Blank constructor?
  */
 ApplicationPacket::ApplicationPacket(){
-  service = NONE;
+  service = NULL;
   payload = "";
 
   size = CalculateSize();
@@ -43,7 +44,7 @@ ApplicationPacket::ApplicationPacket(int term) {
 }
 
 /**
- * Copy constructor. Todo: something has to be const here i think?
+ * Copy constructor.
  */
 ApplicationPacket::ApplicationPacket(const ApplicationPacket &p){
   service = p.service;
@@ -66,7 +67,7 @@ ApplicationPacket::ApplicationPacket(string &serie){
 ApplicationPacket::~ApplicationPacket(){
 }
 
-int ApplicationPacket::GetTerm() const {
+int ApplicationPacket::GetTerm() {
   if (payload.size() < sizeof(int)) {
     return -1;
   }
@@ -75,7 +76,7 @@ int ApplicationPacket::GetTerm() const {
 
   // Regardless of DATA or REPLY packet type, term is always the
   // first 4 bytes of the payload anyway.
-  memcpy(&term, payload.data, sizeof(int));
+  memcpy(&term, payload.data(), sizeof(int));
   return term;
 }
 

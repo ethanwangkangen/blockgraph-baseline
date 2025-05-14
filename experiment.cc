@@ -73,7 +73,7 @@ Experiment::Experiment(int nNodes, int sTime, double timeBetweenTxn,
   CreateWifi(mLoss);
   CreateMobility(mMobility);
 	CreateAddresses();
-	CreateOracleConsensus();
+//	CreateOracleConsensus();
   CreateApplications();
   CreateMobilityApplication();
 
@@ -243,22 +243,21 @@ void Experiment::CreateAddresses(){
   interfaces = ipv4.Assign(devices);
 
 }
+// Unused.
+// void Experiment::CreateOracleConsensus(){
+// 	consensus_oracle_traces = vector<B4MTraces>(nodes.GetN());
+// 	B4MeshOracleHelper consensus_oracle_Helper(&consensus_oracle_traces);
 
-void Experiment::CreateOracleConsensus(){
+// 	consensus_oracle_apps = consensus_oracle_Helper.Install(nodes);
+// 	consensus_oracle_apps.Start(Seconds(3));
+// 	consensus_oracle_apps.Stop(Seconds(sTime));
+// }
 
-	consensus_oracle_traces = vector<B4MTraces>(nodes.GetN());
-	B4MeshOracleHelper consensus_oracle_Helper(&consensus_oracle_traces);
-
-	consensus_oracle_apps = consensus_oracle_Helper.Install(nodes);
-	consensus_oracle_apps.Start(Seconds(3));
-	consensus_oracle_apps.Stop(Seconds(sTime));
-
-}
-
+// For the Central application to be installed on nodes
 void Experiment::CreateApplications(){
 
-  B4MeshHelper b4meshHelper(&b4mesh_traces);
-  b4mesh_apps = b4meshHelper.Install(nodes, timeBetweenTxn);
+  CentralHelper CentralHelper(&b4mesh_traces);
+  b4mesh_apps = CentralHelper.Install(nodes, timeBetweenTxn);
   b4mesh_apps.Start(Seconds(6));
   b4mesh_apps.Stop(Seconds(sTime));
 

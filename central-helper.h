@@ -1,5 +1,5 @@
-#ifndef B4MESH_HELPER_H
-#define B4MESH_HELPER_H
+#ifndef CENTRAL_HELPER_H
+#define CENTRAL_HELPER_H
 
 #include "ns3/node.h"
 #include "ns3/object-factory.h"
@@ -7,16 +7,16 @@
 #include "ns3/application-container.h"
 
 #include "b4m_traces.h"
-#include "b4mesh.h"
+#include "Central.h"
 #include <vector>
 
 using namespace std;
 using namespace ns3;
-class B4MeshHelper{
+class CentralHelper{
   public:
-    B4MeshHelper();
-    B4MeshHelper(B4MTraces* t);
-    ~B4MeshHelper();
+    CentralHelper();
+    CentralHelper(B4MTraces* t);
+    ~CentralHelper();
 
     ApplicationContainer Install(NodeContainer c, float timeBetweenTxn);
 

@@ -17,8 +17,7 @@
 
 #include "utils.h"
 #include "b4m_traces.h"
-#include "b4mesh-oracle.h"
-#include "b4mesh.h"
+#include "Central.h"
 
 using namespace ns3;
 using namespace std;
@@ -50,12 +49,15 @@ class B4MeshMobility : public Application{
     /**
      * This is a pointer to the Oracle Consensus protocol of node i
      */
-    Ptr<B4MeshOracle> GetB4MeshOracle(int nodeId);
+   // Ptr<B4MeshOracle> GetB4MeshOracle(int nodeId);
 
     /*
      * This is a pointer to the blockgraph protocol of node i
      */
-    Ptr<B4Mesh> GetB4MeshOf(int nodeId);
+    // Ptr<B4Mesh> GetB4MeshOf(int nodeId);
+
+
+    Ptr<Central> GetCentral(int nodeId);
 
     /*
      * Get the local Ip adresse
