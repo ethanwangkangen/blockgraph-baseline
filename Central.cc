@@ -19,7 +19,7 @@ TypeId Central::GetTypeId(){
 Central::Central() {
   isLeader = false;
   current_term = 0;
-  sizeOfData = 500; // Todo: change this
+  sizeOfData = 50000; // Todo: change this
   // Set up in SetUp()
   allNodes = vector<pair<bool,int>>();
   recv_sock = 0; 
@@ -57,6 +57,9 @@ void Central::SetUp(Ptr<Node> node, vector<Ipv4Address> peers){
 
 void Central::StartApplication(){
   running = true;
+  debug_suffix.str("");
+  debug_suffix<< "Start B4Mesh on node : " << node->GetId() << endl;
+  debug(debug_suffix.str()); 
   Simulator::ScheduleNow(&Central::DisseminateData, this);
 }
 
@@ -74,6 +77,11 @@ void Central::ReceivePacket(Ptr<Socket> socket){
       InetSocketAddress iaddr = InetSocketAddress::ConvertFrom(from);
       Ipv4Address ip = iaddr.GetIpv4();
 
+
+      debug_suffix.str("");
+      debug_suffix << " Received Packet : New packet of " << packet->GetSize() << "B from Node " << ip;
+      debug(debug_suffix.str());
+      
       string parsedPacket;
       char* packetInfo = new char[packet->GetSize()];
       packet->CopyData(reinterpret_cast<uint8_t*>(packetInfo),
@@ -86,13 +94,23 @@ void Central::ReceivePacket(Ptr<Socket> socket){
 
      	if (p.GetService() == ApplicationPacket::DATA){
           // Follower received a message from leader. Need to send reply/ack.
-	  int term = p.GetTerm();
+          debug_suffix.str("");
+	  debug_suffix << "Follower received DATA of size " << p.GetSize()
+		  << " from " << GetIdFromIp(ip) << " Sending reply"<< endl;
+	  debug(debug_suffix.str());
+
+      	  int term = p.GetTerm();
 	  ApplicationPacket reply(term);
 	  SendPacket(reply, ip, false);
 
 	} else if (p.GetService() == ApplicationPacket::REPLY) {
           // If follower sending reply, need to take note
-          ProcessFollowerResponse(p, ip);
+          
+          debug_suffix.str("");
+	  debug_suffix << "Leader received REPLY from " << GetIdFromIp(ip) << endl;
+	  debug(debug_suffix.str());
+
+	  ProcessFollowerResponse(p, ip);
 	}
 
       } catch(const exception&e) {
@@ -105,15 +123,20 @@ void Central::ReceivePacket(Ptr<Socket> socket){
 }
 
 void Central::SendPacket(ApplicationPacket& packet, Ipv4Address ip, bool scheduled){
-  if (running == false){
+  if (running == false || ip == GetIpAddressFromId(node->GetId())){ // Don't send packet to self
     return;
   }
+
+  debug_suffix.str("");
+  debug_suffix << GetIdFromIp(ip) << " Sending packet of size " << packet.GetSize()
+  	<< " to " << GetIdFromIp(ip) << endl;
+  debug(debug_suffix.str());
 
   Ptr<Packet> pkt = Create<Packet>((const uint8_t*)(packet.Serialize().data()), packet.GetSize());
 
   TypeId tid = TypeId::LookupByName("ns3::UdpSocketFactory");
   Ptr<Socket> source = Socket::CreateSocket (node, tid);
-  InetSocketAddress remote = InetSocketAddress (ip, 80);
+  InetSocketAddress remote = InetSocketAddress (ip, 81);
   source->Connect(remote);
 
   int res = source->Send(pkt);
@@ -125,15 +148,27 @@ void Central::SendPacket(ApplicationPacket& packet, Ipv4Address ip, bool schedul
 } 
 
 // Need to modify this to only send to nodes in the group.
+// Change to broadcast properly
 void Central::BroadcastPacket(ApplicationPacket& packet){
+
+  debug_suffix.str("");
+  debug_suffix << node->GetId() << " Broadcasting packet of size " 
+	  << packet.GetSize() << " to all nodes within group." << endl;
+  debug(debug_suffix.str());
+
   if (!running) {
     return;
   }
   for (auto& ip : peers){
     if (allNodes[GetIdFromIp(ip)].first == true){ // if node is in group
+      debug_suffix.str("");
+      debug_suffix << "Broadcasting to: " << GetIdFromIp(ip) << endl;
+      debug(debug_suffix.str());
+
       SendPacket(packet, ip, false);
     }
   } 
+
 }
 
 /**
@@ -144,6 +179,7 @@ void Central::BroadcastPacket(ApplicationPacket& packet){
  *
  */
 void Central::DisseminateData(){
+
   if (running==false || !isLeader){
     return;
   }
@@ -151,6 +187,12 @@ void Central::DisseminateData(){
   sizeOfData += 100; // Todo: change this
 
   current_term++;
+
+
+  debug_suffix.str("");
+  debug_suffix << node->GetId() << " Disseminating data " << sizeOfData
+  	<< " at term " << current_term << endl;
+  debug(debug_suffix.str());
 
   // Create data packet
   ApplicationPacket p(current_term, sizeOfData);
@@ -160,7 +202,7 @@ void Central::DisseminateData(){
   BroadcastPacket(p);
 
   // Start retransmissions for this cycle.
-  RetransmitData(current_term, 1);
+  Simulator::Schedule(Seconds(2), &Central::RetransmitData, this, current_term, 1);
 
   // Todo: change interval to a variable
   Simulator::Schedule(Seconds(50), &Central::DisseminateData, this); 
@@ -172,12 +214,20 @@ void Central::DisseminateData(){
  *
  */
 void Central::RetransmitData(int term, int increment_count){
+
   if (!running || !isLeader){
     return;
   }
+
   if (increment_count >= 20) { // Todo: implement this as a max increment
     return;
   }
+
+  
+  debug_suffix.str("");
+  debug_suffix << node->GetId() << " Check for retransmittion at term " << term 
+  	<< " increment " << increment_count << endl;
+  debug(debug_suffix.str());
 
   bool requireRetransmission = false;
 
@@ -187,12 +237,17 @@ void Central::RetransmitData(int term, int increment_count){
     int latestTermReplied = allNodes[i].second;
 
     // If node is in group, check last term
-    if (inGroup && (latestTermReplied < current_term)){ // Node is in current group
+    if (i != node->GetId() && inGroup && (latestTermReplied < current_term)){ 
+	    // Node is in current group
+      debug_suffix.str("");
+      debug_suffix << "Retransmitting to " << i;
+      debug(debug_suffix.str());
+
       SendData(sizeOfData, GetIpAddressFromId(i)); 
       requireRetransmission = true;
     }
   }
-  
+
   // If all followers have responded for this term, don't need retransmit already.
   if (!requireRetransmission){
     return;
@@ -216,9 +271,13 @@ int Central::GetIdFromIp(Ipv4Address ip) {
 }
 
 /**
- * Leader only. Send DATA packet of size sizeOfData to a specific follower node.
+ * Leader only. eend DATA packet of size sizeOfData to a specific follower node.
  */
 void Central::SendData(float sizeOfData, Ipv4Address destAddr){
+  
+  debug_suffix.str("");
+  debug_suffix << node->GetId() << " Sending data " << sizeOfData << " at term "
+	<< current_term << " to node " << GetIdFromIp(destAddr) << endl;
   if (!running || !isLeader) {
     return;
   }
@@ -269,4 +328,12 @@ Ptr<Central> Central::GetCentral(int nodeId){
   Ptr<Application> app = ns3::NodeList::GetNode(nodeId)->GetApplication(0);
   Ptr<Central> centralApp = app->GetObject<Central>();
   return centralApp;
+}
+
+
+void Central::debug(string suffix){
+  std::cout << Simulator::Now().GetSeconds() << "s: Central : Node " << node->GetId() <<
+      " : " << suffix << endl;
+  debug_suffix.str("");
+ 
 }

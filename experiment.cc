@@ -3,29 +3,29 @@
 Experiment::Experiment(int nNodes, int sTime, double timeBetweenTxn, 
                          int mMobility, int mLoss, int nScen, double speed) {
 
-	trace_dir = ".";
+  trace_dir = ".";
 
   // Data link rate. Set for both non-unicast in Init(), and unicast in CreateWifi()
-	phy_mode = "DsssRate11Mbps"; 
+  phy_mode = "DsssRate11Mbps"; 
 
   this->nNodes = nNodes;
   this->sTime = sTime;
-	this->timeBetweenTxn = timeBetweenTxn;
+  this->timeBetweenTxn = timeBetweenTxn;
   this->mMobility = mMobility;
   this->mLoss = mLoss;
-	this->nScen = nScen;
+  this->nScen = nScen;
   this->speed = speed;
 
-	cout << "RUN = "<< RngSeedManager::GetRun() << " --nNodes = " << nNodes;
-	cout << " --sTime = " << sTime << " --timeBetweenTxn = " << timeBetweenTxn;
+  cout << "RUN = "<< RngSeedManager::GetRun() << " --nNodes = " << nNodes;
+  cout << " --sTime = " << sTime << " --timeBetweenTxn = " << timeBetweenTxn;
   cout << " --mMobility = " << mMobility << " --mLoss = " << mLoss;
   cout  <<  " --nScen = " << nScen << " --speed = " << speed << endl;
 
   // Rules of Simulation
-	if (timeBetweenTxn <= 0) {
-	  cout << " timeBetweenTxn must be a positive number " << endl;
+  if (timeBetweenTxn <= 0) {
+    cout << " timeBetweenTxn must be a positive number " << endl;
     exit(1);
-	}
+  }
 
   if (nNodes > 50) {
     cout << " nNodes must be at most 50 " << endl;
@@ -67,13 +67,12 @@ Experiment::Experiment(int nNodes, int sTime, double timeBetweenTxn,
     exit(1);
   }
 
-	Init();
-	nodes.Create(nNodes); // Create nodes in the NodeContainer
+  Init();
+  nodes.Create(nNodes); // Create nodes in the NodeContainer
 
   CreateWifi(mLoss);
   CreateMobility(mMobility);
-	CreateAddresses();
-//	CreateOracleConsensus();
+  CreateAddresses();
   CreateApplications();
   CreateMobilityApplication();
 

@@ -1,0 +1,1044 @@
+RUN = 1 --nNodes = 10 --sTime = 600 --timeBetweenTxn = 2.5 --mMobility = 1 --mLoss = 2 --nScen = 2 --speed = 2
+ mobility model is: 1
+Install Central on node : 0
+Install Central on node : 1
+Install Central on node : 2
+Install Central on node : 3
+Install Central on node : 4
+Install Central on node : 5
+Install Central on node : 6
+Install Central on node : 7
+Install Central on node : 8
+Install Central on node : 9
+Install B4MeshMobility on node : 0
+Install B4MeshMobility on node : 1
+Install B4MeshMobility on node : 2
+Install B4MeshMobility on node : 3
+Install B4MeshMobility on node : 4
+Install B4MeshMobility on node : 5
+Install B4MeshMobility on node : 6
+Install B4MeshMobility on node : 7
+Install B4MeshMobility on node : 8
+Install B4MeshMobility on node : 9
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+ #### Executing Constant Position model ####
+6s: Central : Node 0 : Start B4Mesh on node : 0
+
+6s: Central : Node 1 : Start B4Mesh on node : 1
+
+6s: Central : Node 2 : Start B4Mesh on node : 2
+
+6s: Central : Node 3 : Start B4Mesh on node : 3
+
+6s: Central : Node 4 : Start B4Mesh on node : 4
+
+6s: Central : Node 5 : Start B4Mesh on node : 5
+
+6s: Central : Node 6 : Start B4Mesh on node : 6
+
+6s: Central : Node 7 : Start B4Mesh on node : 7
+
+6s: Central : Node 8 : Start B4Mesh on node : 8
+
+6s: Central : Node 9 : Start B4Mesh on node : 9
+
+6s: Central : Node 1 : 1 Disseminating data 50100 at term 1
+
+6s: Central : Node 1 : 1 Broadcasting packet of size 50109 to all nodes within group.
+
+8s: Central : Node 1 : 1 Retransmitting data at term 1 increment 1
+
+8s: Central : Node 1 : Retransmitting to 0
+8s: Central : Node 1 : 0 Sending packet of size 50109 to 0
+
+8s: Central : Node 1 : Retransmitting to 2
+8s: Central : Node 1 : 2 Sending packet of size 50109 to 2
+
+8s: Central : Node 1 : Retransmitting to 3
+8s: Central : Node 1 : 3 Sending packet of size 50109 to 3
+
+8s: Central : Node 1 : Retransmitting to 4
+8s: Central : Node 1 : 4 Sending packet of size 50109 to 4
+
+8s: Central : Node 1 : Retransmitting to 5
+8s: Central : Node 1 : 5 Sending packet of size 50109 to 5
+
+8s: Central : Node 1 : Retransmitting to 6
+8s: Central : Node 1 : 6 Sending packet of size 50109 to 6
+
+8s: Central : Node 1 : Retransmitting to 7
+8s: Central : Node 1 : 7 Sending packet of size 50109 to 7
+
+8s: Central : Node 1 : Retransmitting to 8
+8s: Central : Node 1 : 8 Sending packet of size 50109 to 8
+
+8s: Central : Node 1 : Retransmitting to 9
+8s: Central : Node 1 : 9 Sending packet of size 50109 to 9
+
+10s: Central : Node 1 : 1 Retransmitting data at term 1 increment 2
+
+10s: Central : Node 1 : Retransmitting to 0
+10s: Central : Node 1 : 0 Sending packet of size 50109 to 0
+
+10s: Central : Node 1 : Retransmitting to 2
+10s: Central : Node 1 : 2 Sending packet of size 50109 to 2
+
+10s: Central : Node 1 : Retransmitting to 3
+10s: Central : Node 1 : 3 Sending packet of size 50109 to 3
+
+10s: Central : Node 1 : Retransmitting to 4
+10s: Central : Node 1 : 4 Sending packet of size 50109 to 4
+
+10s: Central : Node 1 : Retransmitting to 5
+10s: Central : Node 1 : 5 Sending packet of size 50109 to 5
+
+10s: Central : Node 1 : Retransmitting to 6
+10s: Central : Node 1 : 6 Sending packet of size 50109 to 6
+
+10s: Central : Node 1 : Retransmitting to 7
+10s: Central : Node 1 : 7 Sending packet of size 50109 to 7
+
+10s: Central : Node 1 : Retransmitting to 8
+10s: Central : Node 1 : 8 Sending packet of size 50109 to 8
+
+10s: Central : Node 1 : Retransmitting to 9
+10s: Central : Node 1 : 9 Sending packet of size 50109 to 9
+
+10.0512s: Central : Node 0 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.0512s: Central : Node 0 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.0512s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+10.1025s: Central : Node 2 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.1025s: Central : Node 2 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.1025s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+10.1569s: Central : Node 3 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.1569s: Central : Node 3 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.1569s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+10.2108s: Central : Node 4 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.2108s: Central : Node 4 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.2108s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+10.2635s: Central : Node 5 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.2635s: Central : Node 5 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.2635s: Central : Node 5 : 1 Sending packet of size 9 to 1
+
+10.3144s: Central : Node 6 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.3144s: Central : Node 6 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.3144s: Central : Node 6 : 1 Sending packet of size 9 to 1
+
+10.3665s: Central : Node 7 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.3665s: Central : Node 7 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.3665s: Central : Node 7 : 1 Sending packet of size 9 to 1
+
+10.4183s: Central : Node 8 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.4183s: Central : Node 8 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.4183s: Central : Node 8 : 1 Sending packet of size 9 to 1
+
+10.4701s: Central : Node 9 :  Received Packet : New packet of 50109B from Node 10.1.0.2
+10.4701s: Central : Node 9 : Follower received DATA of size 50109 from 1 Sending reply
+
+10.4701s: Central : Node 9 : 1 Sending packet of size 9 to 1
+
+10.4713s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+10.4713s: Central : Node 1 : Leader received REPLY from 0
+
+10.4726s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+10.4726s: Central : Node 1 : Leader received REPLY from 2
+
+10.4743s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+10.4743s: Central : Node 1 : Leader received REPLY from 4
+
+10.4754s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.6
+10.4754s: Central : Node 1 : Leader received REPLY from 5
+
+10.4765s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.7
+10.4765s: Central : Node 1 : Leader received REPLY from 6
+
+10.4778s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.8
+10.4778s: Central : Node 1 : Leader received REPLY from 7
+
+10.479s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.9
+10.479s: Central : Node 1 : Leader received REPLY from 8
+
+10.48s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.10
+10.48s: Central : Node 1 : Leader received REPLY from 9
+
+11.1582s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+11.1582s: Central : Node 1 : Leader received REPLY from 3
+
+12s: Central : Node 1 : 1 Retransmitting data at term 1 increment 3
+
+56s: Central : Node 1 : 1 Disseminating data 50200 at term 2
+
+56s: Central : Node 1 : 1 Broadcasting packet of size 50209 to all nodes within group.
+
+56s: Central : Node 1 : Broadcasting to: 0
+
+56s: Central : Node 1 : 0 Sending packet of size 50209 to 0
+
+56s: Central : Node 1 : Broadcasting to: 1
+
+56s: Central : Node 1 : Broadcasting to: 2
+
+56s: Central : Node 1 : 2 Sending packet of size 50209 to 2
+
+56s: Central : Node 1 : Broadcasting to: 3
+
+56s: Central : Node 1 : 3 Sending packet of size 50209 to 3
+
+56s: Central : Node 1 : Broadcasting to: 4
+
+56s: Central : Node 1 : 4 Sending packet of size 50209 to 4
+
+56s: Central : Node 1 : Broadcasting to: 5
+
+56s: Central : Node 1 : 5 Sending packet of size 50209 to 5
+
+56s: Central : Node 1 : Broadcasting to: 6
+
+56s: Central : Node 1 : 6 Sending packet of size 50209 to 6
+
+56s: Central : Node 1 : Broadcasting to: 7
+
+56s: Central : Node 1 : 7 Sending packet of size 50209 to 7
+
+56s: Central : Node 1 : Broadcasting to: 8
+
+56s: Central : Node 1 : 8 Sending packet of size 50209 to 8
+
+56s: Central : Node 1 : Broadcasting to: 9
+
+56s: Central : Node 1 : 9 Sending packet of size 50209 to 9
+
+56.0521s: Central : Node 0 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.0521s: Central : Node 0 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.0521s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+56.0526s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+56.0526s: Central : Node 1 : Leader received REPLY from 0
+
+56.106s: Central : Node 2 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.106s: Central : Node 2 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.106s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+56.1065s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+56.1065s: Central : Node 1 : Leader received REPLY from 2
+
+56.1586s: Central : Node 3 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.1586s: Central : Node 3 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.1586s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+56.1591s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+56.1591s: Central : Node 1 : Leader received REPLY from 3
+
+56.2109s: Central : Node 4 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.2109s: Central : Node 4 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.2109s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+56.2114s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+56.2114s: Central : Node 1 : Leader received REPLY from 4
+
+56.2627s: Central : Node 5 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.2627s: Central : Node 5 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.2627s: Central : Node 5 : 1 Sending packet of size 9 to 1
+
+56.2632s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.6
+56.2632s: Central : Node 1 : Leader received REPLY from 5
+
+56.3144s: Central : Node 6 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.3144s: Central : Node 6 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.3144s: Central : Node 6 : 1 Sending packet of size 9 to 1
+
+56.3149s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.7
+56.3149s: Central : Node 1 : Leader received REPLY from 6
+
+56.3663s: Central : Node 7 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.3663s: Central : Node 7 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.3663s: Central : Node 7 : 1 Sending packet of size 9 to 1
+
+56.3668s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.8
+56.3668s: Central : Node 1 : Leader received REPLY from 7
+
+56.4196s: Central : Node 8 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.4196s: Central : Node 8 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.4196s: Central : Node 8 : 1 Sending packet of size 9 to 1
+
+56.4201s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.9
+56.4201s: Central : Node 1 : Leader received REPLY from 8
+
+56.4719s: Central : Node 9 :  Received Packet : New packet of 50209B from Node 10.1.0.2
+56.4719s: Central : Node 9 : Follower received DATA of size 50209 from 1 Sending reply
+
+56.4719s: Central : Node 9 : 1 Sending packet of size 9 to 1
+
+56.4732s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.10
+56.4732s: Central : Node 1 : Leader received REPLY from 9
+
+58s: Central : Node 1 : 1 Retransmitting data at term 2 increment 1
+
+106s: Central : Node 1 : 1 Disseminating data 50300 at term 3
+
+106s: Central : Node 1 : 1 Broadcasting packet of size 50309 to all nodes within group.
+
+106s: Central : Node 1 : Broadcasting to: 0
+
+106s: Central : Node 1 : 0 Sending packet of size 50309 to 0
+
+106s: Central : Node 1 : Broadcasting to: 1
+
+106s: Central : Node 1 : Broadcasting to: 2
+
+106s: Central : Node 1 : 2 Sending packet of size 50309 to 2
+
+106s: Central : Node 1 : Broadcasting to: 3
+
+106s: Central : Node 1 : 3 Sending packet of size 50309 to 3
+
+106s: Central : Node 1 : Broadcasting to: 4
+
+106s: Central : Node 1 : 4 Sending packet of size 50309 to 4
+
+106s: Central : Node 1 : Broadcasting to: 5
+
+106s: Central : Node 1 : 5 Sending packet of size 50309 to 5
+
+106s: Central : Node 1 : Broadcasting to: 6
+
+106s: Central : Node 1 : 6 Sending packet of size 50309 to 6
+
+106s: Central : Node 1 : Broadcasting to: 7
+
+106s: Central : Node 1 : 7 Sending packet of size 50309 to 7
+
+106s: Central : Node 1 : Broadcasting to: 8
+
+106s: Central : Node 1 : 8 Sending packet of size 50309 to 8
+
+106s: Central : Node 1 : Broadcasting to: 9
+
+106s: Central : Node 1 : 9 Sending packet of size 50309 to 9
+
+106.052s: Central : Node 0 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.052s: Central : Node 0 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.052s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+106.052s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+106.052s: Central : Node 1 : Leader received REPLY from 0
+
+106.104s: Central : Node 2 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.104s: Central : Node 2 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.104s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+106.105s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+106.105s: Central : Node 1 : Leader received REPLY from 2
+
+106.159s: Central : Node 3 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.159s: Central : Node 3 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.159s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+106.159s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+106.159s: Central : Node 1 : Leader received REPLY from 3
+
+106.21s: Central : Node 4 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.21s: Central : Node 4 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.21s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+106.21s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+106.21s: Central : Node 1 : Leader received REPLY from 4
+
+106.262s: Central : Node 5 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.262s: Central : Node 5 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.262s: Central : Node 5 : 1 Sending packet of size 9 to 1
+
+106.263s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.6
+106.263s: Central : Node 1 : Leader received REPLY from 5
+
+106.315s: Central : Node 6 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.315s: Central : Node 6 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.315s: Central : Node 6 : 1 Sending packet of size 9 to 1
+
+106.316s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.7
+106.316s: Central : Node 1 : Leader received REPLY from 6
+
+106.367s: Central : Node 7 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.367s: Central : Node 7 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.367s: Central : Node 7 : 1 Sending packet of size 9 to 1
+
+106.368s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.8
+106.368s: Central : Node 1 : Leader received REPLY from 7
+
+106.419s: Central : Node 8 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.419s: Central : Node 8 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.419s: Central : Node 8 : 1 Sending packet of size 9 to 1
+
+106.42s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.9
+106.42s: Central : Node 1 : Leader received REPLY from 8
+
+106.471s: Central : Node 9 :  Received Packet : New packet of 50309B from Node 10.1.0.2
+106.471s: Central : Node 9 : Follower received DATA of size 50309 from 1 Sending reply
+
+106.471s: Central : Node 9 : 1 Sending packet of size 9 to 1
+
+106.472s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.10
+106.472s: Central : Node 1 : Leader received REPLY from 9
+
+108s: Central : Node 1 : 1 Retransmitting data at term 3 increment 1
+
+156s: Central : Node 1 : 1 Disseminating data 50400 at term 4
+
+156s: Central : Node 1 : 1 Broadcasting packet of size 50409 to all nodes within group.
+
+156s: Central : Node 1 : Broadcasting to: 0
+
+156s: Central : Node 1 : 0 Sending packet of size 50409 to 0
+
+156s: Central : Node 1 : Broadcasting to: 1
+
+156s: Central : Node 1 : Broadcasting to: 2
+
+156s: Central : Node 1 : 2 Sending packet of size 50409 to 2
+
+156s: Central : Node 1 : Broadcasting to: 3
+
+156s: Central : Node 1 : 3 Sending packet of size 50409 to 3
+
+156s: Central : Node 1 : Broadcasting to: 4
+
+156s: Central : Node 1 : 4 Sending packet of size 50409 to 4
+
+156.052s: Central : Node 0 :  Received Packet : New packet of 50409B from Node 10.1.0.2
+156.052s: Central : Node 0 : Follower received DATA of size 50409 from 1 Sending reply
+
+156.052s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+156.053s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+156.053s: Central : Node 1 : Leader received REPLY from 0
+
+156.104s: Central : Node 2 :  Received Packet : New packet of 50409B from Node 10.1.0.2
+156.104s: Central : Node 2 : Follower received DATA of size 50409 from 1 Sending reply
+
+156.104s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+156.105s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+156.105s: Central : Node 1 : Leader received REPLY from 2
+
+156.157s: Central : Node 3 :  Received Packet : New packet of 50409B from Node 10.1.0.2
+156.157s: Central : Node 3 : Follower received DATA of size 50409 from 1 Sending reply
+
+156.157s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+156.157s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+156.157s: Central : Node 1 : Leader received REPLY from 3
+
+156.21s: Central : Node 4 :  Received Packet : New packet of 50409B from Node 10.1.0.2
+156.21s: Central : Node 4 : Follower received DATA of size 50409 from 1 Sending reply
+
+156.21s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+156.21s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+156.21s: Central : Node 1 : Leader received REPLY from 4
+
+158s: Central : Node 1 : 1 Retransmitting data at term 4 increment 1
+
+206s: Central : Node 1 : 1 Disseminating data 50500 at term 5
+
+206s: Central : Node 1 : 1 Broadcasting packet of size 50509 to all nodes within group.
+
+206s: Central : Node 1 : Broadcasting to: 0
+
+206s: Central : Node 1 : 0 Sending packet of size 50509 to 0
+
+206s: Central : Node 1 : Broadcasting to: 1
+
+206s: Central : Node 1 : Broadcasting to: 2
+
+206s: Central : Node 1 : 2 Sending packet of size 50509 to 2
+
+206s: Central : Node 1 : Broadcasting to: 3
+
+206s: Central : Node 1 : 3 Sending packet of size 50509 to 3
+
+206s: Central : Node 1 : Broadcasting to: 4
+
+206s: Central : Node 1 : 4 Sending packet of size 50509 to 4
+
+206.053s: Central : Node 0 :  Received Packet : New packet of 50509B from Node 10.1.0.2
+206.053s: Central : Node 0 : Follower received DATA of size 50509 from 1 Sending reply
+
+206.053s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+206.053s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+206.053s: Central : Node 1 : Leader received REPLY from 0
+
+206.105s: Central : Node 2 :  Received Packet : New packet of 50509B from Node 10.1.0.2
+206.105s: Central : Node 2 : Follower received DATA of size 50509 from 1 Sending reply
+
+206.105s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+206.105s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+206.105s: Central : Node 1 : Leader received REPLY from 2
+
+206.158s: Central : Node 3 :  Received Packet : New packet of 50509B from Node 10.1.0.2
+206.158s: Central : Node 3 : Follower received DATA of size 50509 from 1 Sending reply
+
+206.158s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+206.158s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+206.158s: Central : Node 1 : Leader received REPLY from 3
+
+206.21s: Central : Node 4 :  Received Packet : New packet of 50509B from Node 10.1.0.2
+206.21s: Central : Node 4 : Follower received DATA of size 50509 from 1 Sending reply
+
+206.21s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+206.211s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+206.211s: Central : Node 1 : Leader received REPLY from 4
+
+208s: Central : Node 1 : 1 Retransmitting data at term 5 increment 1
+
+256s: Central : Node 1 : 1 Disseminating data 50600 at term 6
+
+256s: Central : Node 1 : 1 Broadcasting packet of size 50609 to all nodes within group.
+
+256s: Central : Node 1 : Broadcasting to: 0
+
+256s: Central : Node 1 : 0 Sending packet of size 50609 to 0
+
+256s: Central : Node 1 : Broadcasting to: 1
+
+256s: Central : Node 1 : Broadcasting to: 2
+
+256s: Central : Node 1 : 2 Sending packet of size 50609 to 2
+
+256s: Central : Node 1 : Broadcasting to: 3
+
+256s: Central : Node 1 : 3 Sending packet of size 50609 to 3
+
+256s: Central : Node 1 : Broadcasting to: 4
+
+256s: Central : Node 1 : 4 Sending packet of size 50609 to 4
+
+256.053s: Central : Node 0 :  Received Packet : New packet of 50609B from Node 10.1.0.2
+256.053s: Central : Node 0 : Follower received DATA of size 50609 from 1 Sending reply
+
+256.053s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+256.053s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+256.053s: Central : Node 1 : Leader received REPLY from 0
+
+256.104s: Central : Node 2 :  Received Packet : New packet of 50609B from Node 10.1.0.2
+256.104s: Central : Node 2 : Follower received DATA of size 50609 from 1 Sending reply
+
+256.104s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+256.105s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+256.105s: Central : Node 1 : Leader received REPLY from 2
+
+256.157s: Central : Node 3 :  Received Packet : New packet of 50609B from Node 10.1.0.2
+256.157s: Central : Node 3 : Follower received DATA of size 50609 from 1 Sending reply
+
+256.157s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+256.157s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+256.157s: Central : Node 1 : Leader received REPLY from 3
+
+256.209s: Central : Node 4 :  Received Packet : New packet of 50609B from Node 10.1.0.2
+256.209s: Central : Node 4 : Follower received DATA of size 50609 from 1 Sending reply
+
+256.209s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+256.21s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+256.21s: Central : Node 1 : Leader received REPLY from 4
+
+258s: Central : Node 1 : 1 Retransmitting data at term 6 increment 1
+
+306s: Central : Node 1 : 1 Disseminating data 50700 at term 7
+
+306s: Central : Node 1 : 1 Broadcasting packet of size 50709 to all nodes within group.
+
+306s: Central : Node 1 : Broadcasting to: 0
+
+306s: Central : Node 1 : 0 Sending packet of size 50709 to 0
+
+306s: Central : Node 1 : Broadcasting to: 1
+
+306s: Central : Node 1 : Broadcasting to: 2
+
+306s: Central : Node 1 : 2 Sending packet of size 50709 to 2
+
+306s: Central : Node 1 : Broadcasting to: 3
+
+306s: Central : Node 1 : 3 Sending packet of size 50709 to 3
+
+306s: Central : Node 1 : Broadcasting to: 4
+
+306s: Central : Node 1 : 4 Sending packet of size 50709 to 4
+
+306.052s: Central : Node 0 :  Received Packet : New packet of 50709B from Node 10.1.0.2
+306.052s: Central : Node 0 : Follower received DATA of size 50709 from 1 Sending reply
+
+306.052s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+306.052s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+306.052s: Central : Node 1 : Leader received REPLY from 0
+
+306.103s: Central : Node 2 :  Received Packet : New packet of 50709B from Node 10.1.0.2
+306.103s: Central : Node 2 : Follower received DATA of size 50709 from 1 Sending reply
+
+306.103s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+306.104s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+306.104s: Central : Node 1 : Leader received REPLY from 2
+
+306.157s: Central : Node 3 :  Received Packet : New packet of 50709B from Node 10.1.0.2
+306.157s: Central : Node 3 : Follower received DATA of size 50709 from 1 Sending reply
+
+306.157s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+306.157s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+306.157s: Central : Node 1 : Leader received REPLY from 3
+
+306.209s: Central : Node 4 :  Received Packet : New packet of 50709B from Node 10.1.0.2
+306.209s: Central : Node 4 : Follower received DATA of size 50709 from 1 Sending reply
+
+306.209s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+306.209s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+306.209s: Central : Node 1 : Leader received REPLY from 4
+
+308s: Central : Node 1 : 1 Retransmitting data at term 7 increment 1
+
+356s: Central : Node 1 : 1 Disseminating data 50800 at term 8
+
+356s: Central : Node 1 : 1 Broadcasting packet of size 50809 to all nodes within group.
+
+356s: Central : Node 1 : Broadcasting to: 0
+
+356s: Central : Node 1 : 0 Sending packet of size 50809 to 0
+
+356s: Central : Node 1 : Broadcasting to: 1
+
+356s: Central : Node 1 : Broadcasting to: 2
+
+356s: Central : Node 1 : 2 Sending packet of size 50809 to 2
+
+356s: Central : Node 1 : Broadcasting to: 3
+
+356s: Central : Node 1 : 3 Sending packet of size 50809 to 3
+
+356s: Central : Node 1 : Broadcasting to: 4
+
+356s: Central : Node 1 : 4 Sending packet of size 50809 to 4
+
+356.051s: Central : Node 0 :  Received Packet : New packet of 50809B from Node 10.1.0.2
+356.051s: Central : Node 0 : Follower received DATA of size 50809 from 1 Sending reply
+
+356.051s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+356.052s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+356.052s: Central : Node 1 : Leader received REPLY from 0
+
+356.105s: Central : Node 2 :  Received Packet : New packet of 50809B from Node 10.1.0.2
+356.105s: Central : Node 2 : Follower received DATA of size 50809 from 1 Sending reply
+
+356.105s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+356.106s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+356.106s: Central : Node 1 : Leader received REPLY from 2
+
+356.158s: Central : Node 3 :  Received Packet : New packet of 50809B from Node 10.1.0.2
+356.158s: Central : Node 3 : Follower received DATA of size 50809 from 1 Sending reply
+
+356.158s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+356.158s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+356.158s: Central : Node 1 : Leader received REPLY from 3
+
+356.211s: Central : Node 4 :  Received Packet : New packet of 50809B from Node 10.1.0.2
+356.211s: Central : Node 4 : Follower received DATA of size 50809 from 1 Sending reply
+
+356.211s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+356.211s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+356.211s: Central : Node 1 : Leader received REPLY from 4
+
+358s: Central : Node 1 : 1 Retransmitting data at term 8 increment 1
+
+406s: Central : Node 1 : 1 Disseminating data 50900 at term 9
+
+406s: Central : Node 1 : 1 Broadcasting packet of size 50909 to all nodes within group.
+
+406s: Central : Node 1 : Broadcasting to: 0
+
+406s: Central : Node 1 : 0 Sending packet of size 50909 to 0
+
+406s: Central : Node 1 : Broadcasting to: 1
+
+406s: Central : Node 1 : Broadcasting to: 2
+
+406s: Central : Node 1 : 2 Sending packet of size 50909 to 2
+
+406s: Central : Node 1 : Broadcasting to: 3
+
+406s: Central : Node 1 : 3 Sending packet of size 50909 to 3
+
+406s: Central : Node 1 : Broadcasting to: 4
+
+406s: Central : Node 1 : 4 Sending packet of size 50909 to 4
+
+406.051s: Central : Node 0 :  Received Packet : New packet of 50909B from Node 10.1.0.2
+406.051s: Central : Node 0 : Follower received DATA of size 50909 from 1 Sending reply
+
+406.051s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+406.052s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+406.052s: Central : Node 1 : Leader received REPLY from 0
+
+406.105s: Central : Node 2 :  Received Packet : New packet of 50909B from Node 10.1.0.2
+406.105s: Central : Node 2 : Follower received DATA of size 50909 from 1 Sending reply
+
+406.105s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+406.105s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+406.105s: Central : Node 1 : Leader received REPLY from 2
+
+406.157s: Central : Node 3 :  Received Packet : New packet of 50909B from Node 10.1.0.2
+406.157s: Central : Node 3 : Follower received DATA of size 50909 from 1 Sending reply
+
+406.157s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+406.158s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+406.158s: Central : Node 1 : Leader received REPLY from 3
+
+406.21s: Central : Node 4 :  Received Packet : New packet of 50909B from Node 10.1.0.2
+406.21s: Central : Node 4 : Follower received DATA of size 50909 from 1 Sending reply
+
+406.21s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+406.211s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+406.211s: Central : Node 1 : Leader received REPLY from 4
+
+408s: Central : Node 1 : 1 Retransmitting data at term 9 increment 1
+
+456s: Central : Node 1 : 1 Disseminating data 51000 at term 10
+
+456s: Central : Node 1 : 1 Broadcasting packet of size 51009 to all nodes within group.
+
+456s: Central : Node 1 : Broadcasting to: 0
+
+456s: Central : Node 1 : 0 Sending packet of size 51009 to 0
+
+456s: Central : Node 1 : Broadcasting to: 1
+
+456s: Central : Node 1 : Broadcasting to: 2
+
+456s: Central : Node 1 : 2 Sending packet of size 51009 to 2
+
+456s: Central : Node 1 : Broadcasting to: 3
+
+456s: Central : Node 1 : 3 Sending packet of size 51009 to 3
+
+456s: Central : Node 1 : Broadcasting to: 4
+
+456s: Central : Node 1 : 4 Sending packet of size 51009 to 4
+
+456.052s: Central : Node 0 :  Received Packet : New packet of 51009B from Node 10.1.0.2
+456.052s: Central : Node 0 : Follower received DATA of size 51009 from 1 Sending reply
+
+456.052s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+456.053s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+456.053s: Central : Node 1 : Leader received REPLY from 0
+
+456.104s: Central : Node 2 :  Received Packet : New packet of 51009B from Node 10.1.0.2
+456.104s: Central : Node 2 : Follower received DATA of size 51009 from 1 Sending reply
+
+456.104s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+456.107s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+456.107s: Central : Node 1 : Leader received REPLY from 2
+
+456.159s: Central : Node 3 :  Received Packet : New packet of 51009B from Node 10.1.0.2
+456.159s: Central : Node 3 : Follower received DATA of size 51009 from 1 Sending reply
+
+456.159s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+456.16s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+456.16s: Central : Node 1 : Leader received REPLY from 3
+
+456.212s: Central : Node 4 :  Received Packet : New packet of 51009B from Node 10.1.0.2
+456.212s: Central : Node 4 : Follower received DATA of size 51009 from 1 Sending reply
+
+456.212s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+456.213s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+456.213s: Central : Node 1 : Leader received REPLY from 4
+
+458s: Central : Node 1 : 1 Retransmitting data at term 10 increment 1
+
+506s: Central : Node 1 : 1 Disseminating data 51100 at term 11
+
+506s: Central : Node 1 : 1 Broadcasting packet of size 51109 to all nodes within group.
+
+506s: Central : Node 1 : Broadcasting to: 0
+
+506s: Central : Node 1 : 0 Sending packet of size 51109 to 0
+
+506s: Central : Node 1 : Broadcasting to: 1
+
+506s: Central : Node 1 : Broadcasting to: 2
+
+506s: Central : Node 1 : 2 Sending packet of size 51109 to 2
+
+506s: Central : Node 1 : Broadcasting to: 3
+
+506s: Central : Node 1 : 3 Sending packet of size 51109 to 3
+
+506s: Central : Node 1 : Broadcasting to: 4
+
+506s: Central : Node 1 : 4 Sending packet of size 51109 to 4
+
+506s: Central : Node 1 : Broadcasting to: 5
+
+506s: Central : Node 1 : 5 Sending packet of size 51109 to 5
+
+506s: Central : Node 1 : Broadcasting to: 6
+
+506s: Central : Node 1 : 6 Sending packet of size 51109 to 6
+
+506s: Central : Node 1 : Broadcasting to: 7
+
+506s: Central : Node 1 : 7 Sending packet of size 51109 to 7
+
+506s: Central : Node 1 : Broadcasting to: 8
+
+506s: Central : Node 1 : 8 Sending packet of size 51109 to 8
+
+506s: Central : Node 1 : Broadcasting to: 9
+
+506s: Central : Node 1 : 9 Sending packet of size 51109 to 9
+
+506.054s: Central : Node 0 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.054s: Central : Node 0 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.054s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+506.055s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+506.055s: Central : Node 1 : Leader received REPLY from 0
+
+506.11s: Central : Node 2 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.11s: Central : Node 2 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.11s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+506.11s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+506.11s: Central : Node 1 : Leader received REPLY from 2
+
+506.162s: Central : Node 3 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.162s: Central : Node 3 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.162s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+506.163s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+506.163s: Central : Node 1 : Leader received REPLY from 3
+
+506.216s: Central : Node 4 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.216s: Central : Node 4 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.216s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+506.216s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+506.216s: Central : Node 1 : Leader received REPLY from 4
+
+506.271s: Central : Node 5 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.271s: Central : Node 5 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.271s: Central : Node 5 : 1 Sending packet of size 9 to 1
+
+506.271s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.6
+506.271s: Central : Node 1 : Leader received REPLY from 5
+
+506.323s: Central : Node 6 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.323s: Central : Node 6 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.323s: Central : Node 6 : 1 Sending packet of size 9 to 1
+
+506.324s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.7
+506.324s: Central : Node 1 : Leader received REPLY from 6
+
+506.377s: Central : Node 7 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.377s: Central : Node 7 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.377s: Central : Node 7 : 1 Sending packet of size 9 to 1
+
+506.377s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.8
+506.377s: Central : Node 1 : Leader received REPLY from 7
+
+506.43s: Central : Node 8 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.43s: Central : Node 8 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.43s: Central : Node 8 : 1 Sending packet of size 9 to 1
+
+506.433s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.9
+506.433s: Central : Node 1 : Leader received REPLY from 8
+
+506.486s: Central : Node 9 :  Received Packet : New packet of 51109B from Node 10.1.0.2
+506.486s: Central : Node 9 : Follower received DATA of size 51109 from 1 Sending reply
+
+506.486s: Central : Node 9 : 1 Sending packet of size 9 to 1
+
+506.487s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.10
+506.487s: Central : Node 1 : Leader received REPLY from 9
+
+508s: Central : Node 1 : 1 Retransmitting data at term 11 increment 1
+
+556s: Central : Node 1 : 1 Disseminating data 51200 at term 12
+
+556s: Central : Node 1 : 1 Broadcasting packet of size 51209 to all nodes within group.
+
+556s: Central : Node 1 : Broadcasting to: 0
+
+556s: Central : Node 1 : 0 Sending packet of size 51209 to 0
+
+556s: Central : Node 1 : Broadcasting to: 1
+
+556s: Central : Node 1 : Broadcasting to: 2
+
+556s: Central : Node 1 : 2 Sending packet of size 51209 to 2
+
+556s: Central : Node 1 : Broadcasting to: 3
+
+556s: Central : Node 1 : 3 Sending packet of size 51209 to 3
+
+556s: Central : Node 1 : Broadcasting to: 4
+
+556s: Central : Node 1 : 4 Sending packet of size 51209 to 4
+
+556s: Central : Node 1 : Broadcasting to: 5
+
+556s: Central : Node 1 : 5 Sending packet of size 51209 to 5
+
+556s: Central : Node 1 : Broadcasting to: 6
+
+556s: Central : Node 1 : 6 Sending packet of size 51209 to 6
+
+556s: Central : Node 1 : Broadcasting to: 7
+
+556s: Central : Node 1 : 7 Sending packet of size 51209 to 7
+
+556s: Central : Node 1 : Broadcasting to: 8
+
+556s: Central : Node 1 : 8 Sending packet of size 51209 to 8
+
+556s: Central : Node 1 : Broadcasting to: 9
+
+556s: Central : Node 1 : 9 Sending packet of size 51209 to 9
+
+556.052s: Central : Node 0 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.052s: Central : Node 0 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.052s: Central : Node 0 : 1 Sending packet of size 9 to 1
+
+556.053s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.1
+556.053s: Central : Node 1 : Leader received REPLY from 0
+
+556.106s: Central : Node 2 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.106s: Central : Node 2 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.106s: Central : Node 2 : 1 Sending packet of size 9 to 1
+
+556.106s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.3
+556.106s: Central : Node 1 : Leader received REPLY from 2
+
+556.16s: Central : Node 3 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.16s: Central : Node 3 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.16s: Central : Node 3 : 1 Sending packet of size 9 to 1
+
+556.161s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.4
+556.161s: Central : Node 1 : Leader received REPLY from 3
+
+556.212s: Central : Node 4 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.212s: Central : Node 4 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.212s: Central : Node 4 : 1 Sending packet of size 9 to 1
+
+556.213s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.5
+556.213s: Central : Node 1 : Leader received REPLY from 4
+
+556.265s: Central : Node 5 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.265s: Central : Node 5 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.265s: Central : Node 5 : 1 Sending packet of size 9 to 1
+
+556.265s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.6
+556.265s: Central : Node 1 : Leader received REPLY from 5
+
+556.319s: Central : Node 6 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.319s: Central : Node 6 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.319s: Central : Node 6 : 1 Sending packet of size 9 to 1
+
+556.32s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.7
+556.32s: Central : Node 1 : Leader received REPLY from 6
+
+556.372s: Central : Node 7 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.372s: Central : Node 7 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.372s: Central : Node 7 : 1 Sending packet of size 9 to 1
+
+556.372s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.8
+556.372s: Central : Node 1 : Leader received REPLY from 7
+
+556.424s: Central : Node 8 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.424s: Central : Node 8 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.424s: Central : Node 8 : 1 Sending packet of size 9 to 1
+
+556.424s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.9
+556.424s: Central : Node 1 : Leader received REPLY from 8
+
+556.476s: Central : Node 9 :  Received Packet : New packet of 51209B from Node 10.1.0.2
+556.476s: Central : Node 9 : Follower received DATA of size 51209 from 1 Sending reply
+
+556.476s: Central : Node 9 : 1 Sending packet of size 9 to 1
+
+556.477s: Central : Node 1 :  Received Packet : New packet of 9B from Node 10.1.0.10
+556.477s: Central : Node 1 : Leader received REPLY from 9
+
+558s: Central : Node 1 : 1 Retransmitting data at term 12 increment 1
+

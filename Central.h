@@ -60,6 +60,9 @@ class Central : public Application{
 
     Ptr<Central> GetCentral(int nodeId);
 
+    void debug(string suffix);
+    
+    void GenerateResults();
   private:
 
     void ReceivePacket(Ptr<Socket> socket);

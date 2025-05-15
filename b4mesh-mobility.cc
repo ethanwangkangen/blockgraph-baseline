@@ -882,8 +882,8 @@ int B4MeshMobility::DetecteNatureChange(vector<pair<int, Ipv4Address>> oldgroup,
 
 void B4MeshMobility::debug(string suffix){
   
-  cout << Simulator::Now().GetSeconds() << "s: B4MeshMobility : Node " << node->GetId() <<
-      " : " << suffix << endl;
-  debug_suffix.str("");
+//  cout << Simulator::Now().GetSeconds() << "s: B4MeshMobility : Node " << node->GetId() <<
+  //    " : " << suffix << endl;
+  //debug_suffix.str("");
   
 }
